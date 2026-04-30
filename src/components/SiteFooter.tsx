@@ -173,7 +173,15 @@ export function SiteFooter() {
 
           {/* Copyright */}
           <p className="text-sm text-white/85">
-            © כל הזכויות שמורות ללייבדיאנאס בע"מ
+            © כל הזכויות שמורות ל
+            <a
+              href="https://ittsupport.co.il/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline transition-colors hover:text-white"
+            >
+              ittsupport.co.il
+            </a>
           </p>
 
           {/* Certifications */}
