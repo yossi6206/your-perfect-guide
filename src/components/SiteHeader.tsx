@@ -1,4 +1,4 @@
-import { Mail, Phone, MessageSquare, ClipboardCheck } from "lucide-react";
+import { Mail, Phone, MessageSquare, ClipboardCheck, HelpCircle, Heart, Bell } from "lucide-react";
 import logo from "@/assets/livedns-logo.png";
 
 const mainNav = [
