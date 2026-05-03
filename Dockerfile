@@ -17,6 +17,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/src ./src
 COPY --from=builder /app/wrangler.jsonc ./wrangler.jsonc
 COPY --from=builder /app/vite.config.ts ./vite.config.ts
 COPY --from=builder /app/tsconfig.json ./tsconfig.json
