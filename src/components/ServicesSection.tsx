@@ -98,16 +98,16 @@ export function ServicesSection() {
                 </svg>
 
                 {/* Inner solid circle with icon */}
-                <div className="relative flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-header-brand to-header-brand/85 text-background shadow-md shadow-header-brand/40 transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-5 w-5" strokeWidth={2} />
+                <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-header-brand to-header-brand/85 text-background shadow-md shadow-header-brand/40 transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="h-6 w-6" strokeWidth={2} />
                 </div>
               </div>
 
-              <h3 className="mt-5 text-xl font-semibold text-header-brand">
+              <h3 className="mt-7 text-2xl font-semibold text-header-brand">
                 {title}
               </h3>
 
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                 {description}
               </p>
             </div>
