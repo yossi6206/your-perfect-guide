@@ -43,10 +43,8 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2499b781-670f-4819-9654-283a1c71fc5c/id-preview-3c4b85d3--acfc5762-8cc1-4434-834b-4a702a55291b.lovable.app-1777475687173.png" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
