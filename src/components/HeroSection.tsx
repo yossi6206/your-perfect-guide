@@ -5,6 +5,7 @@ import wordpressImg from "@/assets/hosting-wordpress.png";
 import codeImg from "@/assets/hosting-code.png";
 import securityImg from "@/assets/security.png";
 import featureDevImg from "@/assets/feature-development.png";
+import { ContactDialog } from "@/components/ContactDialog";
 
 type Slide = {
   title: string;
