@@ -77,14 +77,14 @@ export function ServicesSection() {
         </h2>
 
         {/* Cards grid */}
-        <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="group relative overflow-hidden rounded-2xl border border-header-brand/15 bg-card px-6 pb-7 pt-12 text-center shadow-[0_4px_20px_-8px_rgba(37,99,235,0.15)] transition-all duration-500 hover:-translate-y-2 hover:border-header-brand/40 hover:shadow-[0_24px_50px_-12px_rgba(37,99,235,0.25)]"
+              className="group relative overflow-hidden rounded-2xl border border-header-brand/15 bg-card px-8 pb-10 pt-16 text-center shadow-[0_4px_20px_-8px_rgba(37,99,235,0.15)] transition-all duration-500 hover:-translate-y-2 hover:border-header-brand/40 hover:shadow-[0_24px_50px_-12px_rgba(37,99,235,0.25)]"
             >
               {/* Icon with ring */}
-              <div className="relative mx-auto flex h-16 w-16 items-center justify-center">
+              <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
                 {/* Outer ring (3/4 circle) */}
                 <svg
                   viewBox="0 0 80 80"
