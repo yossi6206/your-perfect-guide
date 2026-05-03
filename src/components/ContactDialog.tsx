@@ -79,12 +79,12 @@ export function ContactDialog({ children }: Props) {
         dir="rtl"
         className="max-w-lg overflow-hidden border-header-brand/20 p-0 sm:rounded-2xl"
       >
-        <div className="bg-card px-8 pb-6 pt-8 text-center">
-          <DialogHeader>
-            <DialogTitle className="text-3xl font-bold text-foreground">
+        <div className="bg-card px-8 pb-6 pt-8 text-right">
+          <DialogHeader className="items-end text-right">
+            <DialogTitle className="w-full text-right text-3xl font-bold text-foreground">
               הזמן שלך יקר,
             </DialogTitle>
-            <DialogDescription className="mt-2 text-base text-muted-foreground">
+            <DialogDescription className="mt-2 w-full text-right text-base text-muted-foreground">
               השאר פרטים ונחזור אליך
             </DialogDescription>
           </DialogHeader>
