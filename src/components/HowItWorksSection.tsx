@@ -112,10 +112,10 @@ export function HowItWorksSection() {
                 </div>
 
                 {/* Text */}
-                <h3 className="mt-6 text-2xl font-medium text-foreground/85">
+                <h3 className="mt-10 text-2xl font-medium text-foreground/85">
                   {title}
                 </h3>
-                <p className="mt-3 max-w-xs text-base leading-relaxed text-muted-foreground">
+                <p className="mt-5 max-w-xs text-base leading-relaxed text-muted-foreground">
                   {description}
                 </p>
               </div>
