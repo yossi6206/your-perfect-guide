@@ -8,18 +8,18 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# Stage 2: Serve with nginx
-FROM nginx:alpine
-COPY --from=builder /app/dist/client /usr/share/nginx/html
+# Stage 2: Run with Wrangler (Cloudflare Workers local runtime)
+# This app is a TanStack Start SSR app — HTML is rendered by the Worker,
+# not from a static index.html, so nginx alone cannot serve it.
+FROM node:22-alpine
+WORKDIR /app
 
-# Support client-side routing (SPA fallback)
-RUN echo 'server { \
-  listen 80; \
-  root /usr/share/nginx/html; \
-  index index.html; \
-  location / { \
-    try_files $uri $uri/ /index.html; \
-  } \
-}' > /etc/nginx/conf.d/default.conf
+COPY package*.json ./
+RUN npm ci
 
-EXPOSE 80
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 8787
+
+WORKDIR /app/dist/server
+CMD ["npx", "wrangler", "dev", "--port", "8787", "--ip", "0.0.0.0"]
