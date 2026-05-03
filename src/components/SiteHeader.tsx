@@ -1,4 +1,4 @@
-import { Mail, Phone, MessageSquare, ClipboardCheck } from "lucide-react";
+import { Mail, Phone, MessageSquare, ClipboardCheck, HelpCircle, Heart, Bell } from "lucide-react";
 import logo from "@/assets/livedns-logo.png";
 
 const mainNav = [
@@ -53,11 +53,14 @@ export function SiteHeader() {
 
             <span className="h-5 w-px bg-border" />
 
-            <button className="rounded-full border border-header-brand px-5 py-1.5 font-medium transition-colors hover:bg-header-brand hover:text-background">
-              מבצעים
+            <button aria-label="עזרה" className="text-header-brand/80 transition-colors hover:text-header-brand">
+              <HelpCircle className="h-5 w-5" strokeWidth={1.5} />
             </button>
-            <button className="rounded-full border border-header-brand px-5 py-1.5 font-medium transition-colors hover:bg-header-brand hover:text-background">
-              ניהול דומיינים
+            <button aria-label="מועדפים" className="text-header-brand/80 transition-colors hover:text-header-brand">
+              <Heart className="h-5 w-5" strokeWidth={1.5} />
+            </button>
+            <button aria-label="התראות" className="text-header-brand/80 transition-colors hover:text-header-brand">
+              <Bell className="h-5 w-5" strokeWidth={1.5} />
             </button>
           </nav>
 
