@@ -5,6 +5,7 @@ import wordpressImg from "@/assets/hosting-wordpress.png";
 import codeImg from "@/assets/hosting-code.png";
 import securityImg from "@/assets/security.png";
 import featureDevImg from "@/assets/feature-development.png";
+import { ContactDialog } from "@/components/ContactDialog";
 
 type Slide = {
   title: string;
@@ -93,10 +94,12 @@ export function HeroSection() {
               </p>
 
               <div className="mt-10 flex justify-start gap-4">
-                <button className="group inline-flex items-center gap-3 rounded-full border border-header-brand px-8 py-3 text-base font-medium text-header-brand transition-colors hover:bg-header-brand hover:text-background">
-                  <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                  <span>יצירת קשר</span>
-                </button>
+                <ContactDialog>
+                  <button className="group inline-flex items-center gap-3 rounded-full border border-header-brand px-8 py-3 text-base font-medium text-header-brand transition-colors hover:bg-header-brand hover:text-background">
+                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                    <span>יצירת קשר</span>
+                  </button>
+                </ContactDialog>
                 <button className="group inline-flex items-center gap-3 rounded-full border border-header-brand px-8 py-3 text-base font-medium text-header-brand transition-colors hover:bg-header-brand hover:text-background">
                   <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
                   <span>קרא/י עוד</span>
