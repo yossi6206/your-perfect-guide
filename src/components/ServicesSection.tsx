@@ -77,14 +77,14 @@ export function ServicesSection() {
         </h2>
 
         {/* Cards grid */}
-        <div className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, description }) => (
             <div
               key={title}
-              className="group relative overflow-hidden rounded-2xl border border-header-brand/15 bg-card px-8 pb-10 pt-16 text-center shadow-[0_4px_20px_-8px_rgba(37,99,235,0.15)] transition-all duration-500 hover:-translate-y-2 hover:border-header-brand/40 hover:shadow-[0_24px_50px_-12px_rgba(37,99,235,0.25)]"
+              className="group relative overflow-hidden rounded-2xl border border-header-brand/15 bg-card px-6 pb-8 pt-12 text-center shadow-[0_4px_20px_-8px_rgba(37,99,235,0.15)] transition-all duration-500 hover:-translate-y-2 hover:border-header-brand/40 hover:shadow-[0_24px_50px_-12px_rgba(37,99,235,0.25)]"
             >
               {/* Icon with ring */}
-              <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
+              <div className="relative mx-auto flex h-16 w-16 items-center justify-center">
                 {/* Outer ring (3/4 circle) */}
                 <svg
                   viewBox="0 0 80 80"
@@ -98,16 +98,16 @@ export function ServicesSection() {
                 </svg>
 
                 {/* Inner solid circle with icon */}
-                <div className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-header-brand to-header-brand/85 text-background shadow-md shadow-header-brand/40 transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="h-6 w-6" strokeWidth={2} />
+                <div className="relative flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-header-brand to-header-brand/85 text-background shadow-md shadow-header-brand/40 transition-transform duration-300 group-hover:scale-110">
+                  <Icon className="h-5 w-5" strokeWidth={2} />
                 </div>
               </div>
 
-              <h3 className="mt-7 text-2xl font-semibold text-header-brand">
+              <h3 className="mt-6 text-xl font-semibold text-header-brand">
                 {title}
               </h3>
 
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {description}
               </p>
             </div>
