@@ -8,10 +8,7 @@ export default defineConfig({
   plugins: [
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tailwindcss(),
-    tanstackStart({
-      target: "node-server",
-      customViteReactPlugin: true,
-    }),
+    tanstackStart(),
     viteReact(),
   ],
   preview: {
