@@ -19,7 +19,7 @@ RUN npm ci
 
 COPY --from=builder /app/dist ./dist
 
-EXPOSE 8787
+EXPOSE 80
 
 WORKDIR /app/dist/server
-CMD ["npx", "wrangler", "dev", "--port", "8787", "--ip", "0.0.0.0"]
+CMD ["npx", "wrangler", "dev", "--port", "80", "--ip", "0.0.0.0"]
