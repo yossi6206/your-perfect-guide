@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { z } from "zod";
-import { Smile } from "lucide-react";
+import { Smile, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Dialog,
   DialogContent,
@@ -46,10 +47,12 @@ export function ContactDialog({ children }: Props) {
   const [open, setOpen] = useState(false);
   const [subject, setSubject] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const data = {
       name: String(fd.get("name") ?? ""),
       phone: String(fd.get("phone") ?? ""),
@@ -66,10 +69,25 @@ export function ContactDialog({ children }: Props) {
       return;
     }
     setErrors({});
-    toast.success("הפרטים נשלחו בהצלחה! ניצור איתך קשר בהקדם.");
-    setOpen(false);
-    setSubject("");
-    (e.target as HTMLFormElement).reset();
+    setSubmitting(true);
+    try {
+      const { data: res, error } = await supabase.functions.invoke(
+        "send-contact-email",
+        { body: result.data },
+      );
+      if (error || (res && (res as { success?: boolean }).success === false)) {
+        throw new Error(error?.message || "שליחה נכשלה");
+      }
+      toast.success("הפרטים נשלחו בהצלחה! ניצור איתך קשר בהקדם.");
+      setOpen(false);
+      setSubject("");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      toast.error("אירעה שגיאה בשליחה. נסה שוב מאוחר יותר.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -129,10 +147,15 @@ export function ContactDialog({ children }: Props) {
 
           <button
             type="submit"
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-header-brand px-6 py-3.5 text-base font-medium text-background shadow-md shadow-header-brand/30 transition-all hover:-translate-y-0.5 hover:bg-header-brand/90 hover:shadow-lg"
+            disabled={submitting}
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-header-brand px-6 py-3.5 text-base font-medium text-background shadow-md shadow-header-brand/30 transition-all hover:-translate-y-0.5 hover:bg-header-brand/90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
           >
-            <span>שלח/י ונדבר בהקדם</span>
-            <Smile className="h-5 w-5" strokeWidth={2} />
+            <span>{submitting ? "שולח..." : "שלח/י ונדבר בהקדם"}</span>
+            {submitting ? (
+              <Loader2 className="h-5 w-5 animate-spin" strokeWidth={2} />
+            ) : (
+              <Smile className="h-5 w-5" strokeWidth={2} />
+            )}
           </button>
         </form>
       </DialogContent>
