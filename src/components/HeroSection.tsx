@@ -81,10 +81,7 @@ export function HeroSection() {
         <div className="flex flex-1 flex-col items-center gap-8 md:flex-row md:gap-12">
           {/* Text - right (first in RTL DOM) */}
           <div className="flex-1 text-right">
-            <div
-              key={`text-${active}`}
-              className="animate-in fade-in slide-in-from-right-6 duration-500"
-            >
+            <div key={`text-${active}`} className="animate-in fade-in slide-in-from-right-6 duration-500">
               <h1 className="text-5xl font-light text-header-brand md:text-6xl lg:text-7xl">
                 {current.title}
               </h1>
@@ -92,35 +89,35 @@ export function HeroSection() {
               <p className="mt-6 whitespace-pre-line text-lg leading-loose text-foreground/80 md:text-xl">
                 {current.description}
               </p>
+            </div>
 
-              <div className="mt-10 flex justify-start gap-4">
-                <ContactDialog>
-                  <button className="group inline-flex items-center gap-3 rounded-full border border-header-brand px-8 py-3 text-base font-medium text-header-brand transition-colors hover:bg-header-brand hover:text-background">
-                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                    <span>יצירת קשר</span>
-                  </button>
-                </ContactDialog>
+            <div className="mt-10 flex justify-start gap-4">
+              <ContactDialog>
                 <button className="group inline-flex items-center gap-3 rounded-full border border-header-brand px-8 py-3 text-base font-medium text-header-brand transition-colors hover:bg-header-brand hover:text-background">
                   <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-                  <span>קרא/י עוד</span>
+                  <span>יצירת קשר</span>
                 </button>
-              </div>
+              </ContactDialog>
+              <button className="group inline-flex items-center gap-3 rounded-full border border-header-brand px-8 py-3 text-base font-medium text-header-brand transition-colors hover:bg-header-brand hover:text-background">
+                <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                <span>קרא/י עוד</span>
+              </button>
+            </div>
 
-              {/* Dots */}
-              <div className="mt-8 flex items-center gap-3">
-                {slides.map((s, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActive(i)}
-                    aria-label={s.title}
-                    className={`h-2 rounded-full transition-all ${
-                      i === active
-                        ? "w-10 bg-header-brand"
-                        : "w-2 bg-header-brand/30 hover:bg-header-brand/60"
-                    }`}
-                  />
-                ))}
-              </div>
+            {/* Dots */}
+            <div className="mt-8 flex items-center gap-3">
+              {slides.map((s, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  aria-label={s.title}
+                  className={`h-2 rounded-full transition-all ${
+                    i === active
+                      ? "w-10 bg-header-brand"
+                      : "w-2 bg-header-brand/30 hover:bg-header-brand/60"
+                  }`}
+                />
+              ))}
             </div>
           </div>
 
