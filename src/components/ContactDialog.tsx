@@ -79,10 +79,10 @@ export function ContactDialog({ children }: Props) {
       if (error || (res && (res as { success?: boolean }).success === false)) {
         throw new Error(error?.message || "שליחה נכשלה");
       }
-      toast.success("הפרטים נשלחו בהצלחה! ניצור איתך קשר בהקדם.");
       setOpen(false);
       setSubject("");
       form.reset();
+      setSuccessOpen(true);
     } catch (err) {
       console.error(err);
       toast.error("אירעה שגיאה בשליחה. נסה שוב מאוחר יותר.");
