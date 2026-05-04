@@ -161,6 +161,34 @@ export function ContactDialog({ children }: Props) {
         </form>
       </DialogContent>
     </Dialog>
+
+    <Dialog open={successOpen} onOpenChange={setSuccessOpen}>
+      <DialogContent
+        dir="rtl"
+        className="max-w-md overflow-hidden border-header-brand/20 p-0 sm:rounded-2xl"
+      >
+        <div className="flex flex-col items-center gap-5 px-8 pb-8 pt-10 text-center">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-header-brand/10">
+            <CheckCircle2 className="h-12 w-12 text-header-brand" strokeWidth={2} />
+          </div>
+          <DialogHeader className="items-center text-center">
+            <DialogTitle className="text-2xl font-bold text-foreground">
+              ההודעה נשלחה בהצלחה!
+            </DialogTitle>
+            <DialogDescription className="mt-2 text-base text-muted-foreground">
+              תודה שפנית אלינו, נחזור אליך בהקדם האפשרי.
+            </DialogDescription>
+          </DialogHeader>
+          <button
+            onClick={() => setSuccessOpen(false)}
+            className="mt-2 inline-flex items-center justify-center rounded-xl bg-header-brand px-8 py-3 text-base font-medium text-background shadow-md shadow-header-brand/30 transition-all hover:-translate-y-0.5 hover:bg-header-brand/90"
+          >
+            סגור
+          </button>
+        </div>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 }
 
