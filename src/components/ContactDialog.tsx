@@ -45,6 +45,7 @@ type Props = { children: ReactNode };
 
 export function ContactDialog({ children }: Props) {
   const [open, setOpen] = useState(false);
+  const [successOpen, setSuccessOpen] = useState(false);
   const [subject, setSubject] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
