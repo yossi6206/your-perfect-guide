@@ -147,10 +147,15 @@ export function ContactDialog({ children }: Props) {
 
           <button
             type="submit"
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-header-brand px-6 py-3.5 text-base font-medium text-background shadow-md shadow-header-brand/30 transition-all hover:-translate-y-0.5 hover:bg-header-brand/90 hover:shadow-lg"
+            disabled={submitting}
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-header-brand px-6 py-3.5 text-base font-medium text-background shadow-md shadow-header-brand/30 transition-all hover:-translate-y-0.5 hover:bg-header-brand/90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
           >
-            <span>שלח/י ונדבר בהקדם</span>
-            <Smile className="h-5 w-5" strokeWidth={2} />
+            <span>{submitting ? "שולח..." : "שלח/י ונדבר בהקדם"}</span>
+            {submitting ? (
+              <Loader2 className="h-5 w-5 animate-spin" strokeWidth={2} />
+            ) : (
+              <Smile className="h-5 w-5" strokeWidth={2} />
+            )}
           </button>
         </form>
       </DialogContent>
