@@ -120,7 +120,7 @@ export function ContactDialog({ children }: Props) {
               נושא הפניה:
             </label>
             <Select value={subject} onValueChange={setSubject}>
-              <SelectTrigger className="h-11 border-header-brand/25 bg-background text-right focus:ring-header-brand/30">
+              <SelectTrigger className="h-11 flex-row-reverse justify-between border-header-brand/25 bg-background text-right focus:ring-header-brand/30 [&>span]:text-right">
                 <SelectValue placeholder="בחר/י נושא" />
               </SelectTrigger>
               <SelectContent dir="rtl">
