@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { z } from "zod";
-import { Smile, Loader2 } from "lucide-react";
+import { Smile, Loader2, CheckCircle2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import {
   Dialog,
