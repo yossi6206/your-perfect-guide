@@ -28,6 +28,7 @@ function Index() {
       <PartnersSection />
       <HowItWorksSection />
       <BackupPricingSection />
+      <WebDevPricingSection />
       <TestimonialsSection />
       <SiteFooter />
     </div>
