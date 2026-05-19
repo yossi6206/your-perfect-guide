@@ -5,6 +5,7 @@ import wordpressImg from "@/assets/hosting-wordpress.png";
 import codeImg from "@/assets/hosting-code.png";
 import securityImg from "@/assets/security.png";
 import featureDevImg from "@/assets/feature-development.png";
+import webDevHeroImg from "@/assets/hero-webdev.png";
 import { ContactDialog } from "@/components/ContactDialog";
 
 type Slide = {
@@ -42,6 +43,13 @@ const slides: Slide[] = [
       "צוותי אבטחת המידע שלנו עומדים לרשותך עם פתרונות מתקדמים\nלהגנה על האתר והדאטה. מבדקי חדירות, EDR, אנטי וירוס\nוניטור 24/7 שמבטיחים שקט נפשי מלא לעסק.",
     image: securityImg,
     alt: "אבטחת מידע",
+  },
+  {
+    title: "פיתוח אתרים לעסקים",
+    description:
+      "צוות הפיתוח שלנו בונה אתרים מותאמים אישית לעסק שלך —\nמדפי נחיתה ואתרי תדמית ועד חנויות אונליין מתקדמות.\nעיצוב ייחודי, ביצועים מהירים והתאמה מלאה למובייל.",
+    image: webDevHeroImg,
+    alt: "פיתוח אתרים לעסקים",
   },
   {
     title: "פיתוח תכונה",
