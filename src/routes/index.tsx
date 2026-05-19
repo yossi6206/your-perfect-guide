@@ -6,7 +6,7 @@ import { CertificatesSection } from "@/components/CertificatesSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { PricingSection } from "@/components/PricingSection";
 import { BackupPricingSection } from "@/components/BackupPricingSection";
-import { WebDevPricingSection } from "@/components/WebDevPricingSection";
+
 import { PartnersSection } from "@/components/PartnersSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
@@ -28,7 +28,6 @@ function Index() {
       <PartnersSection />
       <HowItWorksSection />
       <BackupPricingSection />
-      <WebDevPricingSection />
       <TestimonialsSection />
       <SiteFooter />
     </div>
