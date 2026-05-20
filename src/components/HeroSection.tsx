@@ -75,26 +75,26 @@ export function HeroSection() {
   const current = slides[active];
 
   return (
-    <section dir="rtl" className="relative w-full bg-background py-12 md:py-20">
-      <div className="mx-auto flex max-w-[1400px] items-center gap-10 px-6">
+    <section dir="rtl" className="relative w-full bg-background py-20 md:py-32">
+      <div className="mx-auto flex max-w-[1700px] items-center gap-12 px-6">
         {/* Right arrow (previous in RTL) */}
         <button
           onClick={prev}
           aria-label="הקודם"
           className="hidden flex-shrink-0 text-header-brand/40 transition-colors hover:text-header-brand md:block"
         >
-          <ChevronRight className="h-10 w-10" strokeWidth={1.5} />
+          <ChevronRight className="h-14 w-14" strokeWidth={1.5} />
         </button>
 
-        <div className="flex flex-1 flex-col items-center gap-8 md:flex-row md:gap-12">
+        <div className="flex flex-1 flex-col items-center gap-10 md:flex-row md:gap-16">
           {/* Text - right (first in RTL DOM) */}
           <div className="flex-1 text-right">
             <div key={`text-${active}`} className="animate-in fade-in slide-in-from-right-6 duration-500">
-              <h1 className="text-5xl font-light text-header-brand md:text-6xl lg:text-7xl">
+              <h1 className="text-6xl font-light text-header-brand md:text-7xl lg:text-8xl">
                 {current.title}
               </h1>
 
-              <p className="mt-6 whitespace-pre-line text-lg leading-loose text-foreground/80 md:text-xl">
+              <p className="mt-8 whitespace-pre-line text-xl leading-loose text-foreground/80 md:text-2xl">
                 {current.description}
               </p>
             </div>
@@ -135,7 +135,7 @@ export function HeroSection() {
               key={`img-${active}`}
               src={current.image}
               alt={current.alt}
-              className="h-auto w-full max-w-[760px] animate-in fade-in zoom-in-95 duration-700"
+              className="h-auto w-full max-w-[920px] animate-in fade-in zoom-in-95 duration-700"
               width={1280}
               height={1024}
             />
@@ -148,7 +148,7 @@ export function HeroSection() {
           aria-label="הבא"
           className="hidden flex-shrink-0 text-header-brand/40 transition-colors hover:text-header-brand md:block"
         >
-          <ChevronLeft className="h-10 w-10" strokeWidth={1.5} />
+          <ChevronLeft className="h-14 w-14" strokeWidth={1.5} />
         </button>
       </div>
     </section>
