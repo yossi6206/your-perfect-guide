@@ -75,8 +75,8 @@ export function HeroSection() {
   const current = slides[active];
 
   return (
-    <section dir="rtl" className="relative w-full bg-background py-12 md:py-20">
-      <div className="mx-auto flex max-w-[1400px] items-center gap-10 px-6">
+    <section dir="rtl" className="relative w-full bg-background py-20 md:py-32">
+      <div className="mx-auto flex max-w-[1700px] items-center gap-12 px-6">
         {/* Right arrow (previous in RTL) */}
         <button
           onClick={prev}
