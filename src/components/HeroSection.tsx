@@ -136,7 +136,7 @@ export function HeroSection() {
               key={`img-${active}`}
               src={current.image}
               alt={current.alt}
-              className="h-auto w-full max-w-[920px] animate-in fade-in zoom-in-95 duration-700"
+              className="h-auto w-full max-w-[600px] animate-in fade-in zoom-in-95 duration-700"
               width={1280}
               height={1024}
             />
@@ -149,7 +149,8 @@ export function HeroSection() {
           aria-label="הבא"
           className="hidden flex-shrink-0 text-header-brand/40 transition-colors hover:text-header-brand md:block"
         >
-          <ChevronLeft className="h-14 w-14" strokeWidth={1.5} />
+          <ChevronLeft className="h-9 w-9" strokeWidth={1.5} />
+
         </button>
       </div>
     </section>
