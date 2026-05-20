@@ -83,7 +83,7 @@ export function HeroSection() {
           aria-label="הקודם"
           className="hidden flex-shrink-0 text-header-brand/40 transition-colors hover:text-header-brand md:block"
         >
-          <ChevronRight className="h-10 w-10" strokeWidth={1.5} />
+          <ChevronRight className="h-14 w-14" strokeWidth={1.5} />
         </button>
 
         <div className="flex flex-1 flex-col items-center gap-8 md:flex-row md:gap-12">
