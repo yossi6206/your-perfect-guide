@@ -135,7 +135,7 @@ export function HeroSection() {
               key={`img-${active}`}
               src={current.image}
               alt={current.alt}
-              className="h-auto w-full max-w-[760px] animate-in fade-in zoom-in-95 duration-700"
+              className="h-auto w-full max-w-[920px] animate-in fade-in zoom-in-95 duration-700"
               width={1280}
               height={1024}
             />
